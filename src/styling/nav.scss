@@ -1,0 +1,28 @@
+#nav {
+  //padding-left: 60px;
+  //padding-right: 120px;
+  padding-top: 20px;
+  height: 80px;
+  background: rgba(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  //box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 3;
+}
+
+#nav a {
+  font-weight: bold;
+  color: black;
+  font-size: 2.5ch;
+  //float: left;
+}
+
+#nav a.router-link-exact-active {
+  color: #114084;
+}
+
+#router-link {
+  margin-left: 10px;
+  margin-right: 10px;
+}
