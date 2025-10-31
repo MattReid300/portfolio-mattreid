@@ -1,122 +1,41 @@
 <template>
-  <div>
+  <div class="projects">
     <br />
-    <h1 class="title t1" style="padding: 30px">
-      {{ title }}
+    <h1 class="t1 mb-4" style="padding: 30px">
+      {{ title }} <b style="color: #1C4C89">Projects</b>
     </h1>
-    <div id="cards">
-      <b-card
-        title="Vue Newspaper Site"
-        id="b-card1"
-        img-alt="Card image"
-        img-height="200px"
-        img-left
-      >
-        <b-card-text>
-          <p>
-            One of my more advanced projects which uses the Vue.js framework for the front end and Firebase Realtime Database for the backend.
-          </p>
-          <b-button
-            variant="outline-dark"
-            onclick="location.href='https://vue-newspaper-app.netlify.app/'"
-          >
-            <span><b-icon icon="lightning-fill"></b-icon></span>
-            Click here to see the app
-          </b-button>
-          <b-button
-            variant="dark"
-            onclick="location.href='https://github.com/MattReid300/vue-newspaper-app'"
-          >
-            <span><b-icon icon="code"></b-icon></span>
-            Click here to see the code
-          </b-button>
-        </b-card-text>
-      </b-card>
-      <b-card
-        title="Axios Quiz app"
-        id="b-card4"
-        img-alt="Card image"
-        img-height="200px"
-        img-left
-      >
-        <b-card-text>
-          <p>
-            Quiz app built with Vue Js that fetches an open API database using
-            Axios JavaScript library. 
-          </p>
-          <b-button
-            variant="outline-dark"
-            onclick="location.href='https://vue-quizzle-app.netlify.app/'"
-          >
-            <span><b-icon icon="lightning-fill"></b-icon></span>
-            Click here to see the app
-          </b-button>
-          <b-button
-            variant="dark"
-            onclick="location.href='https://github.com/MattReid300/vue-quizzle-app'"
-          >
-            <span><b-icon icon="code"></b-icon></span>
-            Click here to see the code
-          </b-button>
-        </b-card-text>
-      </b-card>
-      <b-card
-        title="JavaScript Tetris"
-        id="b-card2"
-        img-alt="Card image"
-        img-height="200px"
-        img-right
-      >
-        <b-card-text>
-          <p>
-            Tetris minigame built with vanilla JavaScript and HTML. I learnt a lot
-            of new concepts and deepened my knowledge of the JavaScript language.
-          </p>
-          <b-button
-            variant="outline-dark"
-            onclick="location.href='https://mattreid300.github.io/tetris-game/'"
-          >
-            <span><b-icon icon="lightning-fill"></b-icon></span>
-            Click here to see the app
-          </b-button>
-          <b-button
-            variant="dark"
-            onclick="location.href='https://github.com/MattReid300/tetris-game'"
-          >
-            <span><b-icon icon="code"></b-icon></span>
-            Click here to see the code
-          </b-button>
-        </b-card-text>
-      </b-card>
-      <b-card
-        title="HTML-JS Currency Converter"
-        id="b-card3"
-        img-alt="Card image"
-        img-height="200px"
-        img-left
-      >
-        <b-card-text>
-          <p>
-            JavaScript app which fetches live currency exchange
-            rates and converts any amount of money from one to another.
-          </p>
-          <b-button
-            variant="outline-dark"
-            onclick="location.href='https://mattreid300.github.io/jscurrencyconverter/'"
-          >
-            <span><b-icon icon="lightning-fill"></b-icon></span>
-            Click here to see the app
-          </b-button>
-          <b-button
-            variant="dark"
-            onclick="location.href='https://github.com/MattReid300/jscurrencyconverter'"
-          >
-            <span><b-icon icon="code"></b-icon></span>
-            Click here to see the code
-          </b-button>
-        </b-card-text>
-      </b-card>
-    </div>
+    <v-container id="cards">
+      <b-row class="justify-content-center">
+        <b-col cols="8" v-for="project in projects" :key="project.id" class="mb-4">
+          <b-card class="w-100 text-left">
+            <b-row no-gutters>
+              <b-col cols="3">
+                <b-card-img :src="project.img" alt="card image" class="rounded-0"></b-card-img>
+              </b-col>
+              <b-col cols="9">
+                <b-card-body class="h-100 d-flex flex-column justify-content-evenly pt-0">
+                  <b-card-text>
+                    <h4 class="font-weight-bold">{{ project.title }}</h4>
+                    <p>{{ project.description }}</p>
+                  </b-card-text>
+                  <div class="b-card-actions">
+                    <b-button variant="outline-accent" @click="goToSite(project.link)">
+                    <span><b-icon icon="lightning-fill"></b-icon></span>
+                    Click here to see the app
+                  </b-button>
+                  <b-button variant="accent" @click="goToSite(project.code)">
+                    <span><b-icon icon="code"></b-icon></span>
+                    Click here to see the code
+                  </b-button>
+                  </div>
+                </b-card-body>
+              </b-col>
+            </b-row>
+
+          </b-card>
+        </b-col>
+      </b-row>
+    </v-container>
   </div>
 </template>
 
@@ -124,18 +43,44 @@
 export default {
   data() {
     return {
-      title: "Web Development Projects",
+      title: "Here are my ",
+      projects: [
+        {
+          id: 1,
+          title: "Vue Newspaper App",
+          description: "Digital newspaper app that uses Vue.js for the frontend and Firebase Realtime Database for the backend.",
+          img: require("../assets/NewspaperApp.png"),
+          link: "https://vue-newspaper-app.netlify.app/",
+          code: "https://github.com/MattReid300/vue-newspaper-app",
+        },
+        {
+          id: 2,
+          title: "Axios Quiz app",
+          description: "Quiz app built with Vue.js that fetches an open API database using Axios JavaScript library.",
+          img: require("../assets/QuizzApp.png"),
+          link: "https://vue-quizzle-app.netlify.app/",
+          code: "https://github.com/MattReid300/vue-quizzle-app",
+        },
+        {
+          id: 3,
+          title: "JS Currency Converter",
+          description: "Vanilla JavaScript app which fetches live currency exchange rates and converts money.",
+          img: require("../assets/CurrencyApp.png"),
+          link: "https://mattreid300.github.io/jscurrencyconverter/",
+          code: "https://github.com/MattReid300/jscurrencyconverter",
+        },
+      ]
     };
   },
+  methods: {
+    goToSite(link) {
+      window.location.href = link;
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@media screen and (max-width: 800px) {
-  #b-card {
-    width: 100%;
-  }
-}
 button {
   width: 250px;
   margin: 5px;

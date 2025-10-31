@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <br />
+  <div style="padding: 0; margin: 0;">
     <div class="landing-page">
       <div class="landing-text">
         <h1 class="page-header">
           Hi, my name is
-          <b style="color: #3467a9">Matthew Reid</b>
+          <b style="color: #1C4C89">Matthew Reid</b>
         </h1>
         <h4 style="color: #808080">
-          I am a self-taught front-end web developer and graphic designer.
+          I am a front-end web developer.
         </h4>
         <span id="span1">
           <a href="#dev-about"><b-icon icon="arrow-down"></b-icon>Skillset</a>
@@ -53,7 +52,8 @@ Projectsript>
 <style lang="scss" scoped>
 .landing-page {
   //width: 100%;
-  height: 700px;
+  // height: 700px;
+  height: 90vh;
   background-color: white;
   text-align: center;
   display: flex;
@@ -93,7 +93,7 @@ Projectsript>
 }
 
 #span1 a {
-  color: #3467a9;
+  color: #1C4C89;
 }
 
 #img-me {

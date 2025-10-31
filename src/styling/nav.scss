@@ -1,13 +1,15 @@
 #nav {
-  //padding-left: 60px;
+  padding-left: 20px;
   //padding-right: 120px;
+  text-align: left;
   padding-top: 20px;
-  height: 80px;
+  // height: 80px;
+  height: 10vh;
   background: rgba(255, 255, 255);
-  position: fixed;
+  //position: fixed;
   width: 100%;
   //box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 3;
 }
 
@@ -19,7 +21,7 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #114084;
+  color: #1C4C89;
 }
 
 #router-link {

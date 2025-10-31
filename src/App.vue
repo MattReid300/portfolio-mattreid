@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <b-navbar id="b-navbar">
-        <router-link to="/" id="router-link">Matt Reid</router-link>
-        <router-link :to="{ name: 'contacts' }" id="router-link">Contact</router-link>
-      </b-navbar>
+        <!-- <b-navbar id="nav"> -->
+          <router-link to="/" id="router-link">Matt Reid</router-link>
+          <router-link :to="{ name: 'contacts' }" id="router-link">Contact</router-link>
+        <!-- </b-navbar> -->
     </div>
     <router-view />
   </div>
@@ -27,5 +27,4 @@ export default {};
 // #app {
 //   height: inherit;
 //   width: inherit;
-// }
-</style>
+// }</style>
